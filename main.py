@@ -218,7 +218,7 @@ if __name__ == "__main__":
         client_info.put((client_dict[i], args))
 
     # Start server and get initial outputs
-    pool = cm.MyPool(args.thread_number, init_process, (client_info, Client))
+    pool = cm.DreamPool(args.thread_number, init_process, (client_info, Client))
     # init server
     server_dict['save_path'] = '{}/logs/{}__{}_e{}_c{}'.format(os.getcwd(),
         time.strftime("%Y%m%d_%H%M%S"), args.method, args.epochs, args.client_number)
